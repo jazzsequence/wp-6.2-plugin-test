@@ -85,13 +85,14 @@ function cmb2_render_callback_for_html_tag_processor_test() {
 		$html_after->add_class( 'figure-caption' );
 	}
 
+	$css = 'overflow: auto; word-wrap: break-word; white-space: pre-wrap; border: 1px solid #ccc; padding: 1em;';
 	?>
 	<p>Source before:</p>
-	<pre style="overflow: auto">
+	<pre style="<?php echo esc_attr( $css ); ?>">
 <?php echo esc_html( $html_before ); ?>
 	</pre>
 	<p>Source after:</p>
-	<pre style="overflow: auto">
+	<pre style="<?php echo esc_attr( $css ); ?>">
 <?php echo esc_html( $html_after->get_updated_html() ); ?>
 	</pre>
 	<?php
